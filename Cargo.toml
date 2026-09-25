@@ -1,0 +1,29 @@
+[package]
+name = "dashboard"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.89"
+description = "Terminal dashboard: weather, heartbeat, news, and todos"
+license = "MIT"
+publish = false
+
+[dependencies]
+anyhow = "1"
+chrono = "0.4"
+crossterm = "0.28"
+csv = "1.3"
+ratatui = "0.29"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+wait-timeout = "0.2"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused_must_use = "deny"
+
+[lints.clippy]
+enum_glob_use = "warn"
+manual_strip = "warn"
+needless_borrow = "warn"
+redundant_clone = "warn"
+uninlined_format_args = "warn"

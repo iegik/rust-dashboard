@@ -1,0 +1,28 @@
+[app]
+name = "Dashboard"
+ui_tick_ms = 1000
+command_timeout_ms = 15000
+
+# Each source runs `sh -c cmd` and must print CSV rows (no header).
+# Columns match `schema`. `ttl_ms` is how long a successful result stays fresh.
+
+[weather]
+schema = "city,temp_c,condition"
+cmd = "printf '%s\\n' 'Riga,15,Rainy'"
+ttl_ms = 10800000
+
+[heartbeat]
+schema = "status,host,uptime_or_downtime"
+cmd = "printf '%s\\n' '200,example.com,0d up' '404,dummy.com,15m down'"
+ttl_ms = 5000
+
+[news]
+schema = "source,title,url,datetime"
+cmd = "printf '%s\\n' 'The Times,People against government cuts' 'Hackernews,Windows Update fails again' 'BBC,Markets rally after rate pause' 'The Times,People against government plans' 'Ars Technica,Rust 1.81 ships' 'Wired,Windows update fails in enterprises'"
+ttl_ms = 14400000
+max_articles = 5
+# Skip a title if Levenshtein distance to an already kept title is below this.
+levenshtein_min_distance = 12
+
+[todo]
+path = "todo.md"

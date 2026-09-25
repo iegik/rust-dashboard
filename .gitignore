@@ -1,0 +1,7 @@
+/target
+.cache
+*.swp
+.DS_Store
+config.toml
+tasks.md
+!*.example.*
