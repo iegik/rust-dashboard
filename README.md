@@ -1,5 +1,7 @@
 # Dashboard TUI app
 
+![](./docs/screenshot1.png)
+
 This application shows weather, news and tasks. Refreshes by interval.
 Data read from CSV lines coming from command lines configured in `config.toml`
 for each section. TODO'es formatted in GitHub Flavored Markdown (GFM), that
