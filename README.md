@@ -19,28 +19,16 @@ Telnet or anything that outputs csv.
 
 Configuration file separated by sections for each part of application.
 
-```
-[weather]
-schema = "city,temp_c,condition"
-cmd = "printf '%s\\n' 'Riga,15,Rainy'"
-ttl_ms = 10800000
-
-[heartbeat]
-schema = "status,host,uptime_or_downtime"
-cmd = "printf '%s\\n' '200,example.com,0d up' '404,dummy.com,15m down'"
-ttl_ms = 5000
-
-[news]
-schema = "source,title,url,datetime"
-cmd = "printf '%s\\n' 'The Times,People against government cuts' 'Hackernews,Windows Update fails again' 'BBC,Markets rally after rate pause' 'The Times,People against government plans' 'Ars Technica,Rust 1.81 ships' 'Wired,Windows update fails in enterprises'"
-ttl_ms = 14400000
-max_articles = 5
-# Skip a title if Levenshtein distance to an already kept title is below this.
-levenshtein_min_distance = 12
-
-[todo]
-# path to Markdown formatted todo list `- [ ] (1|3|5|8|13) Task name`
-path = "TODO.md"
-```
-
 See [config.example.toml](config.example.toml) for more information.
+
+## Purpose of the project
+
+The goal of this project is learn more about Rust for myself and show how TUI
+can be transparent for integrating other apps with command lines
+and use generic interface for input data.
+
+Feel free to make changes, forks and even architecture changes.
+
+Here is an OOP used, but it can be also FP or mixed.
+
+[LICENSE](LICENSE)
