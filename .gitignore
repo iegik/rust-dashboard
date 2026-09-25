@@ -3,5 +3,5 @@
 *.swp
 .DS_Store
 config.toml
-tasks.md
+TODO.md
 !*.example.*
